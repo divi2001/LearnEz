@@ -1,1 +1,49 @@
-<p>question works!</p>
+<div class="container mt-5">
+    <div class="card">
+        <div class="d-flex justify-content-between p-3">
+            <div class="image">
+                <img src="https://img.icons8.com/color/96/000000/angularjs.png" alt="" class="src">
+            </div>
+            <div class="quiz-header">
+                <h4>Angular and Typescript quiz!</h4>
+                <span style="font-style: italic;">Welcome {{name}}</span>
+            </div>
+        </div>
+        <div class="d-flex justify-content-around py-3">
+            <div class="score">
+                <h5>{{points}} points</h5>
+            </div>
+            <div class="question-remain">
+                <span style="font-style: italic;">Question {{currQue+1}} of {{queList.length}}</span>
+            </div>
+            <div class="timer">
+                <h5>{{counter}} sec ⏳</h5> 
+            </div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [ngStyle]="{'width':progress+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <div class="question mt-3">
+            <div class="card">
+                <h3>{{ queList[currQue]?.questionText }}</h3>
+            </div>
+        </div>
+        <div class="options">
+            <ol *ngFor="let option of queList[currQue]?.options">
+                <li (click)="answer(currQue+1, option)">
+                    <div class="card">
+                        {{option.text}}
+                    </div>
+                </li>
+
+            </ol>
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <button class="btn" (click)="prevQue()" [disabled]="currQue===0"><i class="fa fa-chevron-left fa-2x"></i></button>
+            <button class="btn" (click)="resetQuiz()"><i class="fa fa-refresh text-primary fa-2x"></i></button>
+            <button class="btn" (click)="nextQue()" [disabled]="currQue===queList.length"><i class="fa fa-chevron-right fa-2x"></i></button>
+        </div>
+    </div>
+</div>
