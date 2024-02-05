@@ -8,6 +8,9 @@ import { QuestionComponent } from './components/mcq/question/question.component'
 import { HeaderComponent } from './components/mcq/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ChangeBgDirective } from './change-bg.directive';
+import { LandingComponent } from './components/course/landing/landing.component';
+import { CourseComponent } from './components/course/course/course.component';
+import { SafeUrlPipe } from './components/course/course/safe-url.pip';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { ChangeBgDirective } from './change-bg.directive';
     WelcomeComponent,
     QuestionComponent,
     HeaderComponent,
-    ChangeBgDirective
+    ChangeBgDirective,
+    LandingComponent,
+    CourseComponent,
+    SafeUrlPipe // Declare SafeUrlPipe here
   ],
   imports: [
     BrowserModule,

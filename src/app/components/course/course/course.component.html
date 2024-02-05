@@ -1,0 +1,51 @@
+<!-- course.component.html -->
+<div class="title-bar">
+    <div class="info-title">
+        <img src="../../../../assets/GCC-TBC.png" alt="GCC-TBC" />
+    </div>
+    <h1>
+      MSCE Pune E-Learning and Demo
+    </h1>
+</div>
+<!-- Add user account controls here if needed -->
+  
+<div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Accordion -->
+        <div class="accordion">
+            <div class="accordion-item" *ngFor="let module of modules; let i = index">
+                <button (click)="toggleAccordionItem(i)" [attr.aria-expanded]="accordionState[i] ? 'true' : 'false'">
+                    <span class="accordion-title">{{ module.title }}</span>
+                    <span class="accordion-icon" [ngClass]="{'rotated': accordionState[i]}"></span>
+                </button>
+                <div class="accordion-content" [ngStyle]="{'max-height': accordionState[i] ? '500px' : '0px'}">
+                    <ul>
+                        <li *ngFor="let session of module.sessions">
+                            <!-- Updated to make session titles clickable buttons -->
+                            <button (click)="onSessionClick(session)">{{ session.title }}</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <!-- Video Player -->
+      <div *ngIf="currentVideoUrl" class="video-container">
+        <iframe title="GCC-TBC" [src]="currentVideoUrl | safeUrl" allowfullscreen></iframe>
+      </div>    
+  
+      <!-- Session Description -->
+      <div class="session-description">
+        <!-- Description goes here -->
+      </div>
+  
+      <!-- MCQ Test Area -->
+      <div class="mcq-test-area">
+        <!-- MCQ test goes here -->
+      </div>
+    </div>
+</div>
