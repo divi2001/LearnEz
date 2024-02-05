@@ -74,7 +74,7 @@ export class QuestionComponent implements OnInit {
         this.resetCounter();
         this.getProgress();
       }, 200)
-      this.points-=10;
+      //this.points-=10;
       this.inCorrectAns++;
     }
   }
