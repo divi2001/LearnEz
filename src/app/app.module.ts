@@ -11,6 +11,8 @@ import { ChangeBgDirective } from './change-bg.directive';
 import { LandingComponent } from './components/course/landing/landing.component';
 import { CourseComponent } from './components/course/course/course.component';
 import { SafeUrlPipe } from './components/course/course/safe-url.pip';
+import { UserLoginComponent } from './components/auth/user-login/user-login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { SafeUrlPipe } from './components/course/course/safe-url.pip';
     ChangeBgDirective,
     LandingComponent,
     CourseComponent,
-    SafeUrlPipe // Declare SafeUrlPipe here
+    SafeUrlPipe,
+    UserLoginComponent // Declare SafeUrlPipe here
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
