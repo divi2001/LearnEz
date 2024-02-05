@@ -227,12 +227,34 @@ body {
 
 /* Session Description Styles */
 /* --------------------------- */
+/* course.component.css */
+
 .session-description {
-    background-color: #dfe6e9; /* Slightly darker shade for the description area */
-    padding: 10px;
-    margin-bottom: 20px;
-    height: 7vh; /* Assigning 60% of the viewport height to session description */
-    overflow: auto; /* Allows scrolling if content overflows */
+  background-color: #f9f9f9; /* Light grey background for the description area */
+  border-left: 4px solid #2c3e50; /* A colored line on the left for visual accent */
+  padding: 1em; /* Some padding around the text */
+  margin: 1em 0; /* Margin above and below the description box */
+  border-radius: 4px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* A subtle shadow to lift the element off the page */
+  transition: all 0.3s ease; /* Transition for hover effects */
+}
+
+.session-description div {
+  font-size: 1rem; /* Set the font-size for the description */
+  color: #333; /* Dark grey color for the text for readability */
+  line-height: 1.6; /* Spacing between lines */
+}
+
+.session-description:hover {
+  background-color: #ffffff; /* Lighten the background on hover */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Increase the shadow to emphasize elevation on hover */
+}
+
+/* Further styling to ensure the description stands out */
+.session-description div::before {
+  content: "Description: ";
+  font-weight: bold; /* Make the "Description" label bold */
+  color: #2c3e50; /* Color that matches the border accent */
 }
 
 /* MCQ Test Area Styles */
