@@ -9,6 +9,7 @@ interface Session {
   title: string;
   videoUrl?: string; // The YouTube video ID
   thumbnailUrl?: string; // The URL for the video's thumbnail image
+  description?: string; // Add this line for the session description
 }
 
 // Define the Module interface, which includes an array of Session objects
@@ -58,7 +59,8 @@ export class CourseComponent implements OnInit{
         {
           title: 'Introduction to Typewriting',
           videoUrl: '0dZBeI5Wa8E',
-          thumbnailUrl: 'https://img.youtube.com/vi/0dZBeI5Wa8E/0.jpg'
+          thumbnailUrl: 'https://img.youtube.com/vi/0dZBeI5Wa8E/0.jpg',
+          description: ""
         },
         {
           title: 'Understanding the Keyboard',
